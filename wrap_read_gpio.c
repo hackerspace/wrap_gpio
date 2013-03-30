@@ -7,8 +7,8 @@
 
 void usage()
 {
-  fprintf(stderr,"usage: wrap_read_gpio [GPIO#]\n"
-      "\tGPIO# = 32 to 37,and 39\n"
+  fprintf(stderr,"usage: wrap_read_gpio GPIO_PIN\n"
+      "\tGPIO_PIN = 32 to 37,and 39\n"
       "\nThese ports are present on the LPC connector.\n"
       "Read the WRAP board manual for details.\n" ) ;
   exit(0);
@@ -28,7 +28,7 @@ int main(int nargs, char **argv)
     exit(0);
   }
 
-  /* Request I/O prvileges */
+  /* Request I/O privileges */
   iopl(3);
 
   /*

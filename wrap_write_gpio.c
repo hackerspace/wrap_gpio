@@ -44,7 +44,6 @@ int main(int nargs, char **argv)
   if(new) {
     fprintf(stderr, "on\n");
     val = val | (1 << (gpio-32));
-//printf("%c\n", (val!=0) ? '1' : '0');
   } else {
     fprintf(stderr, "off\n");
     val = val & ~(1 << (gpio-32));
