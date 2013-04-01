@@ -1,4 +1,6 @@
-all: wrap_read_gpio wrap_write_gpio wrap_setup_gpio
+# please please fix this mess :-x
+
+all: wrap_read_gpio wrap_write_gpio wrap_setup_gpio wrap_wrap_gpio
 
 wrap_read_gpio: wrap_read_gpio.c
 	gcc -m32 -static -o wrap_read_gpio wrap_read_gpio.c
@@ -9,11 +11,14 @@ wrap_write_gpio: wrap_write_gpio.c
 wrap_setup_gpio: wrap_setup_gpio.c
 	gcc -m32 -static -o wrap_setup_gpio wrap_setup_gpio.c
 
+wrap_wrap_gpio: wrap_wrap_gpio.c
+	gcc -m32 -static -o wrap_wrap_gpio wrap_wrap_gpio.c
+
 clean:
-	rm wrap_read_gpio wrap_write_gpio wrap_setup_gpio
+	rm wrap_read_gpio wrap_write_gpio wrap_setup_gpio wrap_wrap_gpio
 
 install:
-	cp wrap_read_gpio wrap_write_gpio wrap_setup_gpio /usr/bin
+	cp wrap_read_gpio wrap_write_gpio wrap_setup_gpio wrap_wrap_gpio /usr/bin
 
 uninstall:
-	rm /usr/bin/wrap_read_gpio /usr/bin/wrap_write_gpio /usr/bin/wrap_setup_gpio
+	rm /usr/bin/wrap_read_gpio /usr/bin/wrap_write_gpio /usr/bin/wrap_setup_gpio /usr/bin/wrap_wrap_gpio
