@@ -108,6 +108,10 @@ int main (int nargs, char **argv) {
   /* Request I/O privileges */
   iopl (3);
 
+  /* Buffers */
+  setvbuf(stdin, NULL, _IONBF, 0);
+  setvbuf(stdout, NULL, _IOLBF, 0);
+
   /*
    *   Offset 0x14 is GPIO-Data-In-1-Register.
    *   See table 6-30 on the SC1100 data sheet.
